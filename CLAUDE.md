@@ -2,6 +2,14 @@
 
 Specialized AI legal agents for expert legal analysis, document review, and compliance guidance.
 
+## 🚀 Using This Template
+
+**This is a GitHub template repository.** Create your own copy:
+
+1. Click **"Use this template"** button on GitHub
+2. Name your repository
+3. Clone and start using the agents
+
 You **must** always and religiously follow KISS, DRY, YAGNI, TRIZ principles.
 
 ## 🤖 Available Agents

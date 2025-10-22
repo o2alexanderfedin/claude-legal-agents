@@ -1,0 +1,2 @@
+Create agent that **must** religiously follow prompt in                                                                                                                                                                                                                  │
+│ ```prompts/sp-regulatory-lawyer.md``` to work on the user's request

@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
 title: "Claude Legal Agents"
-version: 1.1.2
+version: 1.2.0
 date-released: 2025-10-22
 url: "https://github.com/o2alexanderfedin/claude-legal-agents"
 repository-code: "https://github.com/o2alexanderfedin/claude-legal-agents"
@@ -33,5 +33,5 @@ preferred-citation:
       given-names: "Contributors"
   year: 2025
   url: "https://github.com/o2alexanderfedin/claude-legal-agents"
-  version: 1.1.2
+  version: 1.2.0
   license: MIT

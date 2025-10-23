@@ -1,0 +1,64 @@
+#!/bin/bash
+#
+# Git Flow Enforcement - Pre-Push Hook
+# Prevents force pushes to protected branches
+#
+
+PROTECTED_BRANCHES="^(main|master|develop)$"
+
+# Read stdin to get refs being pushed
+while read local_ref local_sha remote_ref remote_sha; do
+    # Extract branch name from remote ref
+    if [ "$remote_ref" != "(delete)" ]; then
+        BRANCH=$(echo "$remote_ref" | sed 's/refs\/heads\///')
+
+        # Check if pushing to protected branch
+        if [[ $BRANCH =~ $PROTECTED_BRANCHES ]]; then
+            # Check if it's a force push
+            if [ "$remote_sha" = "0000000000000000000000000000000000000000" ]; then
+                # New branch, allow
+                continue
+            fi
+
+            # Check for force push by seeing if remote_sha is ancestor of local_sha
+            if ! git merge-base --is-ancestor "$remote_sha" "$local_sha" 2>/dev/null; then
+                echo ""
+                echo "❌ PUSH REJECTED - Git Flow Enforcement"
+                echo ""
+                echo "Force push to '$BRANCH' is not allowed."
+                echo ""
+                echo "Protected branches: main, master, develop"
+                echo ""
+                echo "If you need to force push, please contact the repository administrator."
+                echo ""
+                exit 1
+            fi
+
+            # Additional check: ensure only git flow should push to main
+            if [[ $BRANCH =~ ^(main|master)$ ]]; then
+                # Check if current branch is a release or hotfix branch
+                CURRENT_BRANCH=$(git symbolic-ref --short HEAD 2>/dev/null)
+                if [[ ! $CURRENT_BRANCH =~ ^(release|hotfix)/ ]]; then
+                    echo ""
+                    echo "⚠️  WARNING - Unusual Push to Main"
+                    echo ""
+                    echo "You are pushing to '$BRANCH' from branch '$CURRENT_BRANCH'."
+                    echo ""
+                    echo "Typically, pushes to main should come from:"
+                    echo "  - git flow release finish"
+                    echo "  - git flow hotfix finish"
+                    echo ""
+                    echo "Are you sure you want to continue?"
+                    echo ""
+                    read -p "Type 'yes' to continue: " CONFIRM
+                    if [ "$CONFIRM" != "yes" ]; then
+                        echo "Push cancelled."
+                        exit 1
+                    fi
+                fi
+            fi
+        fi
+    fi
+done
+
+exit 0

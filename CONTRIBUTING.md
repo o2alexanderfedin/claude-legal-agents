@@ -42,23 +42,29 @@ Thank you for your interest in improving this legal agent system.
 **Git Flow Process:**
 
 1. **Fork and clone** the repository
-2. **Create feature branch:**
+2. **Install git hooks (recommended):**
+   ```bash
+   ./.githooks/setup-hooks.sh
+   ```
+   This installs hooks that enforce git flow and prevent common mistakes.
+
+3. **Create feature branch:**
    ```bash
    git flow feature start your-feature-name
    ```
-3. **Make changes:**
+4. **Make changes:**
    - Update agent prompts (`.claude/prompts/`)
    - Update agent configs (`.claude/agents/`) if needed
    - Follow existing structure and style
-4. **Commit with descriptive messages:**
+5. **Commit with descriptive messages:**
    ```bash
    git commit -m "Brief description of change"
    ```
-5. **Finish feature:**
+6. **Finish feature:**
    ```bash
    git flow feature finish your-feature-name
    ```
-6. **Push and create PR:**
+7. **Push and create PR:**
    ```bash
    git push origin develop
    ```
@@ -95,6 +101,29 @@ Thank you for your interest in improving this legal agent system.
 - Providing actual legal advice through contributions
 - Submitting unverified legal information
 - Violating ethical guidelines
+
+## Git Flow Enforcement
+
+**Automated git hooks protect repository integrity:**
+
+This repository uses git hooks to enforce proper git flow workflow. After cloning, run:
+
+```bash
+./.githooks/setup-hooks.sh
+```
+
+**What the hooks enforce:**
+- **No direct commits** to `main` or `develop` branches
+- **Meaningful commit messages** (minimum 10 characters)
+- **No force pushes** to protected branches
+- **Proper git flow usage** for all changes
+
+**If a hook blocks your action:**
+- The hook is working correctly
+- Follow the suggested git flow commands
+- Do not use `--no-verify` unless absolutely necessary
+
+See [.githooks/README.md](.githooks/README.md) for details.
 
 ## Review Process
 

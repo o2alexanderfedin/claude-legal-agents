@@ -1,0 +1,32 @@
+#!/bin/bash
+#
+# Git Flow Enforcement - Pre-Commit Hook
+# Prevents direct commits to protected branches (main, develop)
+#
+
+BRANCH=$(git symbolic-ref --short HEAD 2>/dev/null)
+
+# Protected branches
+PROTECTED_BRANCHES="^(main|master|develop)$"
+
+if [[ $BRANCH =~ $PROTECTED_BRANCHES ]]; then
+    echo ""
+    echo "❌ COMMIT REJECTED - Git Flow Enforcement"
+    echo ""
+    echo "Direct commits to '$BRANCH' are not allowed."
+    echo ""
+    echo "Please use git flow commands:"
+    echo ""
+    echo "  For new features:"
+    echo "    git flow feature start <feature-name>"
+    echo ""
+    echo "  For releases:"
+    echo "    git flow release start <version>"
+    echo ""
+    echo "  For hotfixes:"
+    echo "    git flow hotfix start <version>"
+    echo ""
+    exit 1
+fi
+
+exit 0

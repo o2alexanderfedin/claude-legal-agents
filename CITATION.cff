@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "Claude Legal Agents"
+version: 1.1.0
+date-released: 2025-01-22
+url: "https://github.com/o2alexanderfedin/claude-legal-agents"
+repository-code: "https://github.com/o2alexanderfedin/claude-legal-agents"
+license: MIT
+abstract: >-
+  Specialized AI legal agents powered by Claude for expert legal
+  analysis, document review, and compliance guidance across multiple
+  practice areas including contract law, corporate law, employment law,
+  intellectual property, litigation, and regulatory compliance.
+keywords:
+  - legal-ai
+  - claude
+  - legal-agents
+  - contract-review
+  - legal-analysis
+  - compliance
+  - ai-legal-tools
+  - legal-research
+authors:
+  - family-names: "Claude Legal Agents"
+    given-names: "Contributors"
+    email: "noreply@anthropic.com"
+preferred-citation:
+  type: software
+  title: "Claude Legal Agents: Specialized AI for Legal Analysis"
+  authors:
+    - family-names: "Claude Legal Agents"
+      given-names: "Contributors"
+  year: 2025
+  url: "https://github.com/o2alexanderfedin/claude-legal-agents"
+  version: 1.1.0
+  license: MIT

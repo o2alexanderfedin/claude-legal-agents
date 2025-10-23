@@ -5,21 +5,21 @@ Automated git hooks to enforce git flow workflow and protect repository integrit
 ## What These Hooks Do
 
 ### `pre-commit`
-**Prevents direct commits to protected branches**
-- Blocks commits to `main`, `master`, and `develop`
-- Ensures all work goes through proper git flow branches
+**Prevents direct commits to protected branches**<br/>
+- Blocks commits to `main`, `master`, and `develop`<br/>
+- Ensures all work goes through proper git flow branches<br/>
 - Guides developers to use `git flow` commands
 
 ### `commit-msg`
-**Validates commit message quality**
-- Enforces minimum message length (10 characters)
-- Warns about generic messages (wip, test, fix, etc.)
+**Validates commit message quality**<br/>
+- Enforces minimum message length (10 characters)<br/>
+- Warns about generic messages (wip, test, fix, etc.)<br/>
 - Ensures meaningful commit history
 
 ### `pre-push`
-**Prevents force pushes to protected branches**
-- Blocks `git push --force` to `main`, `master`, `develop`
-- Warns when pushing to `main` from non-release/hotfix branches
+**Prevents force pushes to protected branches**<br/>
+- Blocks `git push --force` to `main`, `master`, `develop`<br/>
+- Warns when pushing to `main` from non-release/hotfix branches<br/>
 - Protects shared branch history
 
 ## Installation
@@ -96,7 +96,7 @@ git config --unset core.hooksPath
 
 ## Protected Branches
 
-- `main` / `master` - Production releases only
+- `main` / `master` - Production releases only<br/>
 - `develop` - Development integration branch
 
 ## Proper Git Flow Workflow
@@ -128,19 +128,19 @@ git push origin main develop --tags
 
 ## Troubleshooting
 
-**Hook not running:**
-- Check file permissions: `ls -la .git/hooks/`
-- Ensure hooks are executable: `chmod +x .git/hooks/*`
+**Hook not running:**<br/>
+- Check file permissions: `ls -la .git/hooks/`<br/>
+- Ensure hooks are executable: `chmod +x .git/hooks/*`<br/>
 - Verify hook path: `git config core.hooksPath`
 
-**Hook blocking legitimate action:**
-- Contact repository maintainer
+**Hook blocking legitimate action:**<br/>
+- Contact repository maintainer<br/>
 - Use `--no-verify` only if absolutely necessary
 
 ## Contributing
 
-To modify hooks:
-1. Edit files in `.githooks/` directory
-2. Test thoroughly
-3. Run setup script to reinstall
+To modify hooks:<br/>
+1. Edit files in `.githooks/` directory<br/>
+2. Test thoroughly<br/>
+3. Run setup script to reinstall<br/>
 4. Commit changes to version control

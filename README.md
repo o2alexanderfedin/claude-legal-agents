@@ -1,6 +1,6 @@
 # Claude Code Legal Agents
 
-[![Template](https://img.shields.io/badge/template-Use%20this%20template-brightgreen)](https://github.com/o2alexanderfedin/claude-legal-agents/generate) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Legal AI](https://img.shields.io/badge/AI-Legal%20Agents-purple)](https://github.com/o2alexanderfedin/claude-legal-agents) [![Setup](https://img.shields.io/badge/setup-%3C%205%20minutes-green)]() [![Agents](https://img.shields.io/badge/agents-7%20Specialized-blue)]() [![Version](https://img.shields.io/badge/version-1.2.0-blue)](https://github.com/o2alexanderfedin/claude-legal-agents/releases)
+[![Template](https://img.shields.io/badge/template-Use%20this%20template-brightgreen)](https://github.com/o2alexanderfedin/claude-legal-agents/generate) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Legal AI](https://img.shields.io/badge/AI-Legal%20Agents-purple)](https://github.com/o2alexanderfedin/claude-legal-agents) [![Setup](https://img.shields.io/badge/setup-%3C%205%20minutes-green)]() [![Agents](https://img.shields.io/badge/agents-7%20Specialized-blue)]() [![Version](https://img.shields.io/badge/version-1.2.1-blue)](https://github.com/o2alexanderfedin/claude-legal-agents/releases)
 
 > Specialized AI legal agents for expert legal analysis, document review, and compliance guidance across multiple practice areas.
 
